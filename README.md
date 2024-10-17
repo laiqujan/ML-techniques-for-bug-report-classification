@@ -16,3 +16,23 @@ We evaluated Roberta on the three datasets. To implement Roberta, we modified th
 # AutoML for bug report classification
 In addition to the above-mentioned techniques that require manual training and optimization, we have also proposed and evaluated AutoML for bug report classification.
 For AutoML, we used the Auto-sklearn library.
+# How to reproduce
+## For classical ML techniques
+### Step 1: Run Grid search using GridSearchCV; see the example below.
+
+<code>#Define the parameter grid for grid search for SGD classifier
+sgd_param_grid = {
+    'alpha': [0.0001, 0.001, 0.01],
+    'penalty': ['l1', 'l2'],
+    'max_iter': [1000, 2000],
+    'loss': ['hinge', 'log']
+}
+sgdclassifier = SGDClassifier()
+sgd_grid_search = GridSearchCV(sgdclassifier, sgd_param_grid,  cv=10, n_jobs=-1)
+sgd_grid_search.fit(X_tfidf, y)
+print("Best Parameters:", sgd_grid_search.best_params_)
+print("Best Score:", sgd_grid_search.best_score_)
+</code>
+### Step 2: Use the the best parameters for training a model.
+
+<code>clf = SGDClassifier(**best_params)</code>
