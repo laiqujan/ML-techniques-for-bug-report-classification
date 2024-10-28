@@ -36,3 +36,20 @@ print("Best Score:", sgd_grid_search.best_score_)
 </code>
 ### Step 2: Use the best parameters for training a model.
 <code>clf = SGDClassifier(**best_params)</code>
+## For AutoML, see details in AutoML_for_IRC.ipynb
+<code>#Create an AutoML-based model
+automl_classifier = autosklearn.classification.AutoSklearnClassifier(
+    time_left_for_this_task=90*60, # set time
+    resampling_strategy="cv",
+    resampling_strategy_arguments={"folds": 10},
+    metric=roc_auc, # set evaluation metric
+    scoring_functions=[roc_auc, average_precision, accuracy, f1, precision, recall]
+)
+#fit the model 
+automl_classifier.fit(X_train, y_train)
+#Check results
+perfor_over_time =automl_classifier.performance_over_time_
+#Save results
+perfor_over_time.to_csv('perfor_over_time_90mintues_cv_scores.csv', index=False) 
+perfor_over_time
+</code>
