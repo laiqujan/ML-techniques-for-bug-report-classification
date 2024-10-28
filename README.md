@@ -18,7 +18,8 @@ In addition to the above-mentioned techniques that require manual training and o
 For AutoML, we used the Auto-sklearn library.
 # How to reproduce
 ## For classical ML techniques
-### Step 1: Run Grid search using GridSearchCV; see the example below.
+### Step 1: Run Grid search using GridSearchCV; see the example below. 
+To apply Grid search to each technique, use the parameters provided in the bottom cells of the jupyter notebook file (Classical_ML_for_IRC.ipynb).
 
 <code>#Define the parameter grid for grid search for SGD classifier
 sgd_param_grid = {
@@ -33,6 +34,5 @@ sgd_grid_search.fit(X_tfidf, y)
 print("Best Parameters:", sgd_grid_search.best_params_)
 print("Best Score:", sgd_grid_search.best_score_)
 </code>
-### Step 2: Use the the best parameters for training a model.
-
+### Step 2: Use the best parameters for training a model.
 <code>clf = SGDClassifier(**best_params)</code>
