@@ -53,3 +53,11 @@ perfor_over_time =automl_classifier.performance_over_time_
 perfor_over_time.to_csv('perfor_over_time_90mintues_cv_scores.csv', index=False) 
 perfor_over_time
 </code>
+## For BERT-based model (Roberta)
+To implement Roberta, we modified the script by Siddiq and Santos (https://github.com/s2e-lab/BERT-Based-GitHub-Issue-Classification). Use RobertaForSequenceClassification and RobertaTokenizer from transformers instead of BertForSequenceClassification and BertTokenizer, as used by Siddiq and Santos. Further details for customization can be found at: https://huggingface.co/docs/transformers/en/model_doc/roberta#transformers.RobertaModel.
+<code>
+E.g.,
+#Load the RoBERTa tokenizer
+#tokenizer = RobertaTokenizer.from_pretrained('roberta-base', do_lower_case=True)
+#Load the RoBERTa model for sequence classification:
+model = RobertaForSequenceClassification.from_pretrained("roberta-base", num_labels=len(label_dict), output_attentions=False, output_hidden_states=False)</code>
