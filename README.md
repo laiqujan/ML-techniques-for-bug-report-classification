@@ -5,7 +5,7 @@ We have used three datasets of bug reports.
 
 **D1:** An open-source data provided by Herzig et al., [2013], https://doi.org/10.1109/ICSE.2013.6606585.
 
-**D2:** An open-source data provided by Kallis et al., [2023], https://doi.org/10.1007/978-3-031-21388-5_34.
+**D2:** An open-source data provided by Kallis et al., [2023], ([https://doi.org/10.1007/978-3-031-21388-5_34](https://github.com/nlbse2023/issue-report-classification)).
 
 **D3:** The third dataset is from a product of a large closed-source company.
 # Classical ML techniques for bug report classification
