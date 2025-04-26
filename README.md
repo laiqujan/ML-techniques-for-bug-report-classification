@@ -1,5 +1,7 @@
 # A comparative analysis of ML techniques for bug report classification
 This repository contains code and information about data for evaluating leading ML techniques for bug report classification.
+# Related articles
+1 and 2
 # Datasets
 We have used three datasets of bug reports.
 
@@ -55,6 +57,9 @@ perfor_over_time
 </code>
 ## For BERT-based model (Roberta)
 To implement Roberta, we modified the script by Siddiq and Santos (https://github.com/s2e-lab/BERT-Based-GitHub-Issue-Classification). Use RobertaForSequenceClassification and RobertaTokenizer from transformers instead of BertForSequenceClassification and BertTokenizer, as used by Siddiq and Santos. Further details for customization can be found at: https://huggingface.co/docs/transformers/en/model_doc/roberta#transformers.RobertaModel.
+
+# Requirements & Libraries
+
 <code>
 E.g.,
 #Load the RoBERTa tokenizer
