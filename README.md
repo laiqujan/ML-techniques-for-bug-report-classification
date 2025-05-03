@@ -63,6 +63,7 @@ perfor_over_time
 </code>
 ## For BERT-based models (RoBERTa.ipynb)
 Use RobertaForSequenceClassification and RobertaTokenizer or BertForSequenceClassification and BertTokenizer from transformers.
+To implement RoBERTa, we modified the script by Siddiq and Santos (https://github.com/s2e-lab/BERT-Based-GitHub-Issue-Classification).
 
 <code>E.g.,
 #Load the RoBERTa tokenizer
